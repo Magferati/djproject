@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Blog Posts</title>
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+
+    {% if blogs %}
+        {% for b in blogs %}
+            <h2>{{ b.title }}</h2>
+            <p><b>By:</b> {{ b.name }}</p>
+            <p>{{ b.content }}</p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No blog posts available.</p>
+    {% endif %}
+
+    <p><a href="{% url 'blog' %}">Back to Home</a></p>
+</body>
+</html>
